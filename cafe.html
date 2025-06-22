@@ -1,0 +1,429 @@
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Carmel - Interior & Menu Delights</title>
+    <!-- Load Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display for headings, Poppins for body -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+      
+<style>
+  body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fcf8f3; /* Creamy background */
+            color: #4a2d0c; /* Dark brown text */
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Custom styles for professional and inviting look */
+        .gradient-coffee-bg {
+            background: linear-gradient(to bottom right, #6b460d, #a0522d); /* Rich brown to terracotta */
+        }
+        .text-shadow-light {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary-coffee {
+            @apply bg-amber-700 hover:bg-amber-800 text-white font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out transform hover:scale-105 shadow-lg;
+        }
+        .section-heading-coffee {
+            @apply text-5xl font-extrabold text-amber-900 mb-4;
+        }
+        .section-subheading-coffee {
+            @apply text-xl text-stone-600 mb-12 max-w-3xl mx-auto;
+        }
+        .menu-card {
+            @apply bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1;
+        }
+        .testimonial-card {
+            @apply bg-amber-50 p-8 rounded-xl shadow-lg;
+        }
+        .gallery-item {
+            @apply relative overflow-hidden rounded-xl shadow-md;
+        }
+        .gallery-item img {
+            @apply w-full h-64 object-cover transition duration-300 transform hover:scale-105;
+        }
+        .gallery-caption {
+            @apply absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 text-white text-xl font-semibold;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md p-4 fixed w-full z-10 top-0">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-3xl font-extrabold text-amber-800">Cafe Carmel</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-stone-700 hover:text-amber-800 transition duration-300 font-medium">Home</a>
+                <a href="#about" class="text-stone-700 hover:text-amber-800 transition duration-300 font-medium">About Us</a>
+                <a href="#interior" class="text-stone-700 hover:text-amber-800 transition duration-300 font-medium">Interior</a>
+                <a href="#menu" class="text-stone-700 hover:text-amber-800 transition duration-300 font-medium">Menu</a>
+                <a href="#testimonials" class="text-stone-700 hover:text-amber-800 transition duration-300 font-medium">Testimonials</a>
+                <a href="#contact" class="text-stone-700 hover:text-amber-800 transition duration-300 font-medium">Contact & Visit</a>
+            </div>
+            <!-- Burger button for mobile -->
+            <button id="menu-button" class="md:hidden text-stone-700 focus:outline-none">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white mt-2 py-2 rounded-lg shadow-md">
+            <a href="#home" class="block px-4 py-2 text-stone-700 hover:bg-stone-100">Home</a>
+            <a href="#about" class="block px-4 py-2 text-stone-700 hover:bg-stone-100">About Us</a>
+            <a href="#interior" class="block px-4 py-2 text-stone-700 hover:bg-stone-100">Interior</a>
+            <a href="#menu" class="block px-4 py-2 text-stone-700 hover:bg-stone-100">Menu</a>
+            <a href="#testimonials" class="block px-4 py-2 text-stone-700 hover:bg-stone-100">Testimonials</a>
+            <a href="#contact" class="block px-4 py-2 text-stone-700 hover:bg-stone-100">Contact & Visit</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-coffee-bg text-white h-screen flex items-center justify-center pt-16 relative overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-20">
+            <!-- Background pattern for visual appeal -->
+            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <defs>
+                    <pattern id="dot-pattern" width="10" height="10" patternUnits="userSpaceOnUse">
+                        <circle cx="2" cy="2" r="1" fill="#fff"></circle>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#dot-pattern)"></rect>
+            </svg>
+        </div>
+        <div class="relative z-10 text-center px-4 max-w-4xl">
+            <p class="text-lg md:text-xl font-light mb-4 opacity-90">Experience the Warmth of Cafe Carmel</p>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight text-shadow-light">
+                Where Every Sip Tells a Story
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto opacity-90">
+                Indulge in expertly crafted coffee, delicious pastries, and a cozy ambiance.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="#menu" class="btn-primary-coffee">Explore Our Menu</a>
+                <a href="#interior" class="btn-primary-coffee !bg-white !text-amber-700 hover:!bg-amber-100">View Our Interior</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="section-heading-coffee">Our Story</h2>
+            <p class="section-subheading-coffee">
+                Cafe Carmel is more than just a coffee shop; it's a place where community gathers and flavors come alive.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-left">
+                <div class="space-y-6">
+                    <h3 class="text-3xl font-bold text-amber-900">Crafting Moments</h3>
+                    <p class="text-stone-700 leading-relaxed text-lg">
+                        Nestled in the heart of the city, Cafe Carmel was founded with a passion for exceptional coffee
+                        and a desire to create a welcoming space for everyone. We believe in sourcing the finest beans,
+                        supporting sustainable practices, and meticulously preparing each cup with care.
+                    </p>
+                    <h3 class="text-3xl font-bold text-amber-900">Our Commitment</h3>
+                    <p class="text-stone-700 leading-relaxed text-lg">
+                        From our freshly baked pastries to our cozy interiors, every detail at Cafe Carmel is designed
+                        to enhance your experience. We're committed to quality, warmth, and building a genuine connection
+                        with our cherished customers. Come and taste the difference.
+                    </p>
+                </div>
+                <div>
+                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/61/e1/a9/carmel-terrasse.jpg?w=900&h=500&s=1" alt="cafe Carmel" >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interior Gallery Section -->
+    <section id="interior" class="py-24 bg-fcf8f3">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="section-heading-coffee">Step Inside Cafe Carmel</h2>
+            <p class="section-subheading-coffee">
+                Explore our inviting and comfortable spaces designed for your relaxation and enjoyment.
+            </p>
+            <br><br>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="gallery-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQMWIMHfokO9xLeX4kVS1-xxdsOoAqGRsbEw&s" alt="Image of welcoming Entrance">
+                    <div class="gallery-caption">Welcoming Entrance</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTGBy_tETeltsGjvXkA4XMxXYcUHbuAFUudUaWFGigfa9D9EQD_eSWMKCW1JJVijvTEjs&usqp=CAU" alt="Image of Comfortable Seating">
+                    <div class="gallery-caption">Comfortable Seating</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN7Jzx7URbq1hMVB2341by-D7JENbfEakelg&s" alt="Image of Barista Station">
+                    <div class="gallery-caption">Barista Station</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaJ0KpJlY7RfPKkyqrTJgajoQ6DlaLulcGe8R2WiQl_GjkBCYPMjh09NJ8nDVbRnfWJJ8&usqp=CAU"alt="Interior design">
+                    <div class="gallery-caption">Interior design</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRebtVgBvHZKByhtywAygtdcDxh9hMkRTgScQ&s" alt="Image of Outdoor Patio">
+                    <div class="gallery-caption">Outdoor Patio</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEkGXlDY06NME3_B35F4bQHe7xxTHpBoGA0g&s" alt="Image of Natural Light">
+                    <div class="gallery-caption">Natural Light</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-24 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="section-heading-coffee">Our Delicious Menu</h2>
+            <p class="section-subheading-coffee">
+                From aromatic coffees to delightful pastries and savory bites, there's something for everyone.
+            </p>
+            <br><br>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Menu Item 1: Coffee - Latte -->
+                <div class="menu-card">
+                    <img src="https://placehold.co/400x250/d2b48c/4a2d0c?text=Creamy+Latte" alt="[Image of Creamy Latte]" class="rounded-lg mb-4 w-full h-48 object-cover">
+                    <h3 class="text-2xl font-semibold mb-2 text-amber-900">Classic Latte</h3>
+                    <p class="text-stone-700 mb-3">Smooth espresso with steamed milk and a thin layer of foam, perfect for any time of day.</p>
+                    <span class="text-2xl font-bold text-amber-800">$4.50</span>
+                </div>
+                <!-- Menu Item 2: Pastry - Croissant -->
+                <div class="menu-card">
+                    <img src="https://placehold.co/400x250/ffe4b5/4a2d0c?text=Buttery+Croissant" alt="[Image of Buttery Croissant]" class="rounded-lg mb-4 w-full h-48 object-cover">
+                    <h3 class="text-2xl font-semibold mb-2 text-amber-900">Fresh Croissant</h3>
+                    <p class="text-stone-700 mb-3">Flaky, buttery perfection, baked fresh daily to a golden crisp.</p>
+                    <span class="text-2xl font-bold text-amber-800">$3.00</span>
+                </div>
+                <!-- Menu Item 3: Coffee - Espresso -->
+                <div class="menu-card">
+                    <img src="https://placehold.co/400x250/a0522d/ffffff?text=Bold+Espresso" alt="[Image of Bold Espresso]" class="rounded-lg mb-4 w-full h-48 object-cover">
+                    <h3 class="text-2xl font-semibold mb-2 text-amber-900">Rich Espresso</h3>
+                    <p class="text-stone-700 mb-3">A strong, aromatic shot of our signature blend, delivering a perfect kick.</p>
+                    <span class="text-2xl font-bold text-amber-800">$3.25</span>
+                </div>
+                <!-- Menu Item 4: Savory - Avocado Toast -->
+                <div class="menu-card">
+                    <img src="https://placehold.co/400x250/cd853f/ffffff?text=Fresh+Avocado+Toast" alt="[Image of Fresh Avocado Toast]" class="rounded-lg mb-4 w-full h-48 object-cover">
+                    <h3 class="text-2xl font-semibold mb-2 text-amber-900">Avocado Toast</h3>
+                    <p class="text-stone-700 mb-3">Toasted sourdough topped with creamy fresh avocado, seasoned to perfection.</p>
+                    <span class="text-2xl font-bold text-amber-800">$7.00</span>
+                </div>
+                <!-- Menu Item 5: Dessert - Carrot Cake -->
+                <div class="menu-card">
+                    <img src="https://placehold.co/400x250/d2691e/ffffff?text=Decadent+Carrot+Cake" alt="[Image of Decadent Carrot Cake]" class="rounded-lg mb-4 w-full h-48 object-cover">
+                    <h3 class="text-2xl font-semibold mb-2 text-amber-900">Carrot Cake Slice</h3>
+                    <p class="text-stone-700 mb-3">Moist and spiced carrot cake generously topped with luscious cream cheese frosting.</p>
+                    <span class="text-2xl font-bold text-amber-800">$5.50</span>
+                </div>
+                <!-- Menu Item 6: Beverage - Assorted Teas -->
+                <div class="menu-card">
+                    <img src="https://placehold.co/400x250/b0e0e6/4a2d0c?text=Soothing+Assorted+Teas" alt="[Image of Soothing Assorted Teas]" >
+                    <h3 class="text-2xl font-semibold mb-2 text-amber-900">Assorted Teas</h3>
+                    <p class="text-stone-700 mb-3">A soothing selection of premium loose leaf teas, available hot or iced.</p>
+                    <span class="text-2xl font-bold text-amber-800">$4.00</span>
+                </div>
+                <!-- New Menu Item 7: Savory - Quiche -->
+                <div class="menu-card">
+                    <img src="https://placehold.co/400x250/e0b06b/4a2d0c?text=Spinach+Quiche" alt="[Image of Spinach Quiche]"  >
+                    <h3 class="text-2xl font-semibold mb-2 text-amber-900">Spinach & Feta Quiche</h3>
+                    <p class="text-stone-700 mb-3">Fluffy eggs baked with fresh spinach and savory feta cheese in a golden crust.</p>
+                    <span class="text-2xl font-bold text-amber-800">$6.50</span>
+                </div>
+                <!-- New Menu Item 8: Sweet - Blueberry Muffin -->
+                <div class="menu-card">
+                    <img src="https://placehold.co/400x250/c0d9e9/4a2d0c?text=Blueberry+Muffin" alt="[Image of Blueberry Muffin]" >
+                    <h3 class="text-2xl font-semibold mb-2 text-amber-900">Blueberry Muffin</h3>
+                    <p class="text-stone-700 mb-3">Freshly baked, moist muffin packed with juicy blueberries.</p>
+                    <span class="text-2xl font-bold text-amber-800">$3.50</span>
+                </div>
+                <!-- New Menu Item 9: Coffee - Cappuccino -->
+                <div class="menu-card">
+                    <img src="https://placehold.co/400x250/b99f84/4a2d0c?text=Frothy+Cappuccino" alt="[Image of Frothy Cappuccino]" class="rounded-lg mb-4 w-full h-48 object-cover">
+                    <h3 class="text-2xl font-semibold mb-2 text-amber-900">Cappuccino</h3>
+                    <p class="text-stone-700 mb-3">Espresso with foamed milk, topped with a dusting of cocoa.</p>
+                    <span class="text-2xl font-bold text-amber-800">$4.75</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 bg-fcf8f3">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="section-heading-coffee">What Our Guests Say</h2>
+            <p class="section-subheading-coffee">
+                We love making your day a little brighter with our coffee and comfort.
+            </p>
+            <br><br>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Testimonial Card 1 -->
+                <div class="testimonial-card text-left">
+                    <p class="text-stone-700 italic mb-6 text-lg">
+                        "Cafe Carmel is my go-to spot! The coffee is consistently amazing, and the atmosphere is so
+                        inviting. It's the perfect place to work or relax."
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://placehold.co/60x60/d1d5db/374151?text=AJ" alt="[Image of Testimonial Avatar]">
+                        <div>
+                            <p class="font-semibold text-amber-900">Anna J.</p>
+                            <p class="text-stone-500 text-sm">Local Regular</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial Card 2 -->
+                <div class="testimonial-card text-left">
+                    <p class="text-stone-700 italic mb-6 text-lg">
+                        "The pastries here are out of this world! I tried the almond croissant, and it was divine.
+                        The staff are always friendly and welcoming too."
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://placehold.co/60x60/d1d5db/374151?text=MR" alt="[Image of Testimonial Avatar]">
+                        <div>
+                            <p class="font-semibold text-amber-900">Mark R.</p>
+                            <p class="text-stone-500 text-sm">Satisfied Customer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-20 bg-amber-700 text-white text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-6">Ready for Your Coffee Break?</h2>
+            <p class="text-lg md:text-xl mb-10 opacity-90 max-w-2xl mx-auto">
+                Visit us today and discover your new favorite spot.
+            </p>
+            <a href="#contact" class="btn-primary-coffee bg-white text-amber-700 hover:bg-amber-100">Plan Your Visit</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="section-heading-coffee">Find Us & Get in Touch</h2>
+            <p class="section-subheading-coffee">
+                We're located conveniently in the city center. Drop by or send us a message!
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                <!-- Location & Hours -->
+                <div class="bg-fcf8f3 p-8 rounded-xl shadow-2xl text-left">
+                    <h3 class="text-2xl font-bold text-amber-900 mb-4">Our Location & Hours</h3>
+                    <p class="text-stone-700 mb-3 text-lg">
+                        <strong>Address:</strong> 123 Coffee Bean Lane, Cityville, CA 90210
+                    </p>
+                    <p class="text-stone-700 mb-6 text-lg">
+                        <strong>Phone:</strong> (123) 456-7890
+                    </p>
+                    <p class="text-stone-700 text-lg">
+                        <strong>Monday - Friday:</strong> 7:00 AM - 6:00 PM<br>
+                        <strong>Saturday:</strong> 8:00 AM - 5:00 PM<br>
+                        <strong>Sunday:</strong> 8:00 AM - 4:00 PM
+                    </p>
+                    <div class="mt-6">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.250462060155!2d-122.41941578468165!3d37.77492947975971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580879e95f68b%3A0xf85c6b7e0a2e2d!2sGolden%20Gate%20Bridge!5e0!3m2!1sen!2sus!4v1678888888888!5m2!1sen!2sus"
+                            width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg shadow-md">
+                        </iframe>
+                    </div>
+                </div>
+                <!-- Contact Form -->
+                <div class="bg-fcf8f3 p-8 rounded-xl shadow-2xl">
+                    <h3 class="text-2xl font-bold text-amber-900 mb-4 text-left">Send Us a Message</h3>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="contactName" class="block text-stone-700 text-sm font-semibold mb-2 text-left">Your Name</label>
+                            <input type="text" id="contactName" name="contactName" class="w-full px-5 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="Your full name" required>
+                        </div>
+                        <div>
+                            <label for="contactEmail" class="block text-stone-700 text-sm font-semibold mb-2 text-left">Your Email</label>
+                            <input type="email" id="contactEmail" name="contactEmail" class="w-full px-5 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="your.email@example.com" required>
+                        </div>
+                        <div>
+                            <label for="contactSubject" class="block text-stone-700 text-sm font-semibold mb-2 text-left">Subject</label>
+                            <input type="text" id="contactSubject" name="contactSubject" class="w-full px-5 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="About your inquiry..." required>
+                        </div>
+                        <div>
+                            <label for="contactMessage" class="block text-stone-700 text-sm font-semibold mb-2 text-left">Your Message</label>
+                            <textarea id="contactMessage" name="contactMessage" rows="6" class="w-full px-5 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="What can we help you with?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary-coffee w-full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-white py-12">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <div>
+                <h4 class="text-xl font-bold mb-4 text-amber-400">Cafe Carmel</h4>
+                <p class="text-stone-400 leading-relaxed">
+                    Bringing warmth and joy through exceptional coffee and community spirit.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-4 text-amber-400">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#home" class="text-stone-400 hover:text-white transition duration-300">Home</a></li>
+                    <li><a href="#about" class="text-stone-400 hover:text-white transition duration-300">About Us</a></li>
+                    <li><a href="#interior" class="text-stone-400 hover:text-white transition duration-300">Interior</a></li>
+                    <li><a href="#menu" class="text-stone-400 hover:text-white transition duration-300">Menu</a></li>
+                    <li><a href="#contact" class="text-stone-400 hover:text-white transition duration-300">Contact & Visit</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-4 text-amber-400">Follow Us</h4>
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <a href="#" class="text-stone-400 hover:text-white transition duration-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.262c-1.225 0-1.628.757-1.628 1.549V12h2.773l-.443 2.89h-2.33V22C18.342 21.128 22 16.991 22 12z"></path></svg>
+                    </a>
+                    <a href="#" class="text-stone-400 hover:text-white transition duration-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.007 2.003a9.998 9.998 0 00-7.39 3.093 9.998 9.998 0 00-2.82 7.086 9.998 9.998 0 007.086 9.774A9.998 9.998 0 0021.003 12a9.998 9.998 0 00-9.003-9.997zm5.553 4.417a.89.89 0 011.258 0 .886.886 0 010 1.256l-1.6 1.6a.886.886 0 01-1.258 0 .89.89 0 010-1.256l1.6-1.6zM8 12c0 2.21 1.79 4 4 4s4-1.79 4-4-1.79-4-4-4-4 1.79-4 4z"></path></svg>
+                    </a>
+                    <a href="#" class="text-stone-400 hover:text-white transition duration-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0H5a5 5 0 00-5 5v14a5 5 0 005 5h14a5 5 0 005-5V5a5 5 0 00-5-5zM8 19H5V8h3v11zM6.5 6.75A1.75 1.75 0 118.25 5 1.75 1.75 0 016.5 6.75zM19 19h-3v-4.722c0-1.128-.276-2.428-1.884-2.428-1.604 0-1.892 1.29-1.892 2.428V19h-3V8h3v1.892c.797-1.396 2.022-2.192 3.5-2.192 2.5 0 4.5 1.7 4.5 5.5v5.8z"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-stone-700 mt-8 pt-8 text-center">
+            <p class="text-stone-500">&copy; 2023 Cafe Carmel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script for mobile navigation
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(item => {
+            item.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
